@@ -29,8 +29,8 @@ pub fn configure(p: Peripherals) -> (crate::board::Usb, Ports, Option<Swd>) {
     // TODO 1: SWD GPIO configuration.
     // SWCLK: PC10, P16 pin 23.
     // SWDIO: PC11, P16 pin 21.
-    let swd_clock = Output::new(p.PC10, Level::Low, Speed::Low);
-    let swd_data = Flex::new(p.PC11);
+    let swd_clock = Output::new(p.PA0, Level::Low, Speed::Low);
+    let swd_data = Flex::new(p.PA2);
 
     let swd = Some(Swd::new(swd_clock, swd_data));
 
